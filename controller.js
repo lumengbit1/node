@@ -3,11 +3,11 @@ const fs = require('fs');
 function addMapping(router, mapping) {
 	for (var url in mapping) {
 		if (url.startsWith('GET ')) {
-			var path = url.substring(4);
+			let path = url.substring(4);
 			router.get(path, mapping[url]);
 			console.log(`register URL mapping: GET ${path}`);
 		} else if (url.startsWith('POST ')) {
-			var path = url.substring(5);
+			let path = url.substring(5);
 			router.post(path, mapping[url]);
 			console.log(`register URL mapping: POST ${path}`);
 		} else {
